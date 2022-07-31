@@ -19,10 +19,5 @@ jobs:
     steps:
       - name: Run a multi-line script
         run: |
-          SqlLocalDB c "test1db"
-          SqlLocalDB s "test1db"
-          SqlLocalDB i "test1db"
-
-          SqlLocalDB c "test2db"
-          SqlLocalDB s "test2db"
-          SqlLocalDB i "test2db"
+          SqlLocalDB s "MSSQLLocalDB"
+          sqlcmd -S "(localdb)\MSSQLLocalDB" -d master -Q "CREATE DATABASE TestDb"
