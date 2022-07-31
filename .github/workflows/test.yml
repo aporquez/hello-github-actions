@@ -20,4 +20,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           SqlLocalDB s "MSSQLLocalDB"
-          sqlcmd -S "(localdb)\MSSQLLocalDB" -d master -Q "CREATE DATABASE TestDb"
+          Invoke-Sqlcmd -ServerInstance "(localdb)\MSSQLLocalDB" -Database master -Query "CREATE DATABASE TestDb"
+          # sqlcmd -S "(localdb)\MSSQLLocalDB" -d master -Q "CREATE DATABASE TestDb"
